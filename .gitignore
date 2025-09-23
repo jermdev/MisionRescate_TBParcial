@@ -1,0 +1,41 @@
+# Archivos de usuario y configuración local
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Archivos generados por compilación
+*.obj
+*.pch
+*.pdb
+*.idb
+*.class
+*.ipdb
+*.iobj
+*.tlh
+*.tli
+*.exe
+*.dll
+*.cache
+*.ilk
+*.log
+
+# Directorios de compilación
+bin/
+obj/
+Debug*/
+Release*/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# Archivos de VS
+.vs/
+.vscode/
+
+# Otros innecesarios
+*.ncb
+*.opendb
+*.vc.db
+*.VC.VC.opendb
