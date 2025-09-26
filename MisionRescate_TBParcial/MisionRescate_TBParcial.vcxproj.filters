@@ -30,12 +30,17 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="JefeMinero.h">
+    <ClInclude Include="Recurso.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Obstaculo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Recurso.h">
+    <ClInclude Include="Taladro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mundo1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Jugador.h">
@@ -56,12 +61,17 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="JefeMinero.cpp">
+    <ClCompile Include="Recurso.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Obstaculo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Recurso.cpp">
+    <ClCompile Include="Taladro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mundo1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Jugador.cpp">

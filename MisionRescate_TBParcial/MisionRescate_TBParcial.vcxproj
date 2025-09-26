@@ -133,6 +133,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Recurso.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Taladro.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
@@ -140,6 +141,9 @@
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="MisionRescate_TBParcial.cpp" />
     <ClCompile Include="Mundo02.cpp" />
+    <ClCompile Include="Jugador.cpp" />
+    <ClCompile Include="MisionRescate_TBParcial.cpp" />
+    <ClCompile Include="Mundo1.cpp" />
     <ClCompile Include="Obstaculo.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -148,6 +152,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Recurso.cpp" />
+    <ClCompile Include="Taladro.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
