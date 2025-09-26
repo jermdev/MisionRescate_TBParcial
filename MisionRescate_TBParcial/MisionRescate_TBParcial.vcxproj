@@ -130,16 +130,14 @@
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="Mundo02.h" />
     <ClInclude Include="Obstaculo.h" />
-    <ClInclude Include="pch.h" />
     <ClInclude Include="Recurso.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Taladro.h" />
+    <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="JefeMinero.cpp" />
-    <ClCompile Include="Jugador.cpp" />
-    <ClCompile Include="MisionRescate_TBParcial.cpp" />
     <ClCompile Include="Mundo02.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="MisionRescate_TBParcial.cpp" />
