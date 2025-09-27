@@ -3,6 +3,7 @@
 #include "string"
 using namespace System;
 using namespace std;
+using namespace System::Drawing;
 class Recurso
 {
 private:
@@ -48,19 +49,8 @@ public:
 	void setActivo(bool activo) {
 		this->activo = activo;
 	}
-	bool colisionRecurso(int xj, int yj) {
-		for (int i = 0; i < 3; i++)
-		{
-			for (int j = 0; j < 3; j++)
-			{
-				if (xj == x + j && yj == y + i)
-				{
-					borrar();
-					return true;
-				}
-			}
-		}
-		return false;
+	Rectangle getRectangle() {
+		return Rectangle(x, y, 3, 3);
 	}
 };
 

@@ -3,6 +3,7 @@
 #include "string"
 using namespace System;
 using namespace std;
+using namespace System::Drawing;
 class Jugador
 {
 private:
@@ -101,12 +102,14 @@ public:
     }
 
     void DibujarFigura(char dir) {
+        Console::ForegroundColor = ConsoleColor::Yellow;
         switch (dir) {
         case 'a': DibujarIzquierda(frame); break;
         case 'd': DibujarDerecha(frame); break;
         case 'w': DibujarArriba(frame); break;
         case 's': DibujarAbajo(frame); break;
         }
+        Console::ResetColor();
     }
 	// matriz[filas][columnas]
 	// 1 = pared
@@ -174,6 +177,9 @@ public:
     }
     void aumentarMineros() {
         minero++;
+    }
+    Rectangle getRectangle() {
+        return Rectangle(x, y, 3, 3);
     }
 };
 
