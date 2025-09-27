@@ -22,16 +22,29 @@ private:
 
 public:
 
-	Mundo02(){}
-	~Mundo02(){}
+	Mundo02() {
+		palancasActivas = 8;
+		jefeMinero = new JefeMinero(70, 10);
+	}
+	~Mundo02() {
+		delete jugador;
+		delete jefeMinero;
 
-	void setJugador() {}
-	void dibujarMapa(){}
-	void generarObstaculos(){}
-	void generarPalancas() {}
+		for (Recurso* pal : palancas1) {
+			delete pal;
+		}
+		for (Recurso* pal : palancas2) {
+			delete pal;
+		}
+	}
 
-	void dibujarInfo() {}
+	void setJugador();
+	void dibujarMapa();
+	void generarObstaculos();
+	void generarPalancas();
 
-	void juegoParte02() {}
+	void dibujarInfo();
+
+	void juegoParte02();
 };
 

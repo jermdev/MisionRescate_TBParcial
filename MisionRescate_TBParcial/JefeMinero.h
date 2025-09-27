@@ -1,22 +1,29 @@
 #pragma once
+
 class JefeMinero {
 
 private:
 
-	int x, y;
+	int x, y, frame;
+	
 
 public:
 
 	JefeMinero(int x, int y): x(x), y(y) {}
-	~JefeMinero(){}
+	~JefeMinero();
 
-	void dibujar() {}
+	void dibujarAbajo(int frame);
+	void dibujarArriba(int frame);
+	void dibujarIzquierda(int frame);
+	void dibujarDerecha(int frame);
 
-	void borrar() {}
+	void dibujarFigura(char dir);
 
-	void mover(char t, int *mapa[30][120]){}
+	void borrar();
 
-	int getX(){}
-	int  getY(){}
+	void mover(char t, int* mapa[30][120]);
+
+	int getX();
+	int  getY();
 };
 
