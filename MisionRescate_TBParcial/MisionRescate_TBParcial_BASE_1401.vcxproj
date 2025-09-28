@@ -126,21 +126,16 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="JefeMinero.h" />
     <ClInclude Include="Jugador.h" />
-    <ClInclude Include="Mundo02.h" />
+    <ClInclude Include="Mundo1.h" />
     <ClInclude Include="Obstaculo.h" />
-    <ClInclude Include="Roca.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Recurso.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Taladro.h" />
-    
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
-    <ClCompile Include="JefeMinero.cpp" />
-    <ClCompile Include="Mundo02.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="MisionRescate_TBParcial.cpp" />
     <ClCompile Include="Mundo1.cpp" />
@@ -160,7 +155,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

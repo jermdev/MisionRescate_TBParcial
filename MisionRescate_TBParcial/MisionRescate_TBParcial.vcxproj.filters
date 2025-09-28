@@ -33,7 +33,7 @@
     <ClInclude Include="Recurso.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Obstaculo.h">
+    <ClInclude Include="Roca.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Recurso.h">
@@ -44,6 +44,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Jugador.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstaculo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

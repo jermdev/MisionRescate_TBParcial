@@ -130,12 +130,10 @@
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="Mundo02.h" />
     <ClInclude Include="Obstaculo.h" />
-    <ClInclude Include="Roca.h" />
-    <ClInclude Include="pch.h" />
     <ClInclude Include="Recurso.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Taladro.h" />
-    
+    <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
@@ -160,7 +158,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

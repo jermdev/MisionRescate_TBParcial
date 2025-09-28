@@ -135,7 +135,6 @@
     <ClInclude Include="Recurso.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Taladro.h" />
-    
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />

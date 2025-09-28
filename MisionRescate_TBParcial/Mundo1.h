@@ -1,14 +1,16 @@
 ﻿#pragma once
 #include "iostream"
 #include "string"
-#include "Obstaculo.h"
+#include "Roca.h"
 #include "Recurso.h"
 #include "Taladro.h"
 #include "Jugador.h"
+#include "Obstaculo.h"
 #include "conio.h"
 #include <vector>
 using namespace System;
 using namespace std;
+using namespace System::Drawing;
 
 static int nivel1parte1[25][120] = {
     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
@@ -48,7 +50,7 @@ class Mundo1
 {
 private:
     Jugador* jugador;
-    vector<Obstaculo*> obstaculos;
+    vector<Obstaculo*> Rocas;
     vector<Recurso*> mineros;
     int metaX, contador = 0;
     int posX, posY;
@@ -81,21 +83,21 @@ public:
         }
         Console::ResetColor();
     }
-    void generarObstaculos() {
+    void generarRocas() {
         // 5 - 20 a 5 - 53
         contador++;
-        if (contador % 8 == 0)
+        if (contador % 15 == 0)
         {
             for (int i = 0; i < 5; i++)
             {
-                Obstaculo* o = new Obstaculo(20 + rand() % 34, 6);
-                obstaculos.push_back(o);
+                Obstaculo* o = new Roca(20 + rand() % 34, 6);
+                Rocas.push_back(o);
             }
         }
     }
     void generarMineros() {
         // 13 - 17 a 19 - 47
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 5; i++)
         {
             Recurso* o = new Recurso(17 + rand() % 29, 13 + rand() % 7, " O ", "/|\\", "7 \\");
             mineros.push_back(o);
@@ -113,29 +115,39 @@ public:
             mineros[i]->dibujar();
         }
     }
-    void dibujarObstaculos() {
-        for (int i = 0; i < obstaculos.size(); i++)
+    void dibujarRocas() {
+        for (int i = 0; i < Rocas.size(); i++)
         {
-            obstaculos[i]->mover(mapa1);
+            Rocas[i]->mover(mapa1);
         }
     }
     void colisiones() {
-        for (int i = 0; i < obstaculos.size(); i++)
+        Rectangle rectJugador = jugador->getRectangle();
+        for (int i = 0; i < Rocas.size(); i++)
         {
-            if (obstaculos[i]->colisionObstaculo(jugador->getX(), jugador->getY()) && obstaculos[i]->IsActivo())
+            if (Rocas[i]->isActivo())
             {
-                jugador->perderMineros();
-                jugador->borrar();
-                jugador->setX(posX);
-                jugador->setY(posY);
+                Rectangle rectEnemigo = Rocas[i]->getRectangle();
+                if (rectJugador.IntersectsWith(rectEnemigo))
+                {
+                    jugador->perderMineros();
+                    jugador->borrar();
+                    jugador->setX(posX);
+                    jugador->setY(posY);
+                }
             }
         }
-        for (int i = 0; i < 33; i++)
+        for (int j = 0; j < mineros.size(); j++)
         {
-            if (mineros[i]->colisionRecurso(jugador->getX(), jugador->getY()) && mineros[i]->isActivo())
+            if (mineros[j]->isActivo())
             {
-                jugador->aumentarMineros();
-                mineros[i]->setActivo(false);
+                Rectangle rectMinero = mineros[j]->getRectangle();
+                if (rectJugador.IntersectsWith(rectMinero))
+                {
+                    jugador->aumentarMineros();
+                    mineros[j]->borrar();
+                    mineros.erase(mineros.begin() + j);
+                }
             }
         }
     }
@@ -149,8 +161,8 @@ public:
         generarMineros();
         while (jugador->getVivo() || !nivel1Completado) {
             dibujarInfo();
-            generarObstaculos();
-            dibujarObstaculos();
+            generarRocas();
+            dibujarRocas();
             dibujarMineros();
             if (_kbhit())
             {
@@ -162,18 +174,20 @@ public:
             {
                 jugador->setVivo(false);
                 Console::Clear();
-                cout << "GAME OVER";
+                cout << "FIN DEL JUEGO";
                 break;
             }
             if (jugador->getMineros() >= 2 && jugador->getX() + 3 >= metaX) {
                 nivel1Completado = true;
                 Console::Clear();
-                cout << "YOU WIN!!!";
+                cout << "HAZ PASADO EL NIVEL 1";
                 break;
             }
             _sleep(100);
         }
     }
+    void juegoParte2() {
 
+    }
 };
 
