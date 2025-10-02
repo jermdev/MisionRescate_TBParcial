@@ -114,6 +114,11 @@ public:
 	// matriz[filas][columnas]
 	// 1 = pared
     void mover(char tecla, int(*mapa)[120]) {
+        
+        if (tecla != 'w' && tecla != 's' && tecla != 'a' && tecla != 'd') {
+            return;
+        }
+
         borrar();
 		switch (tecla) {
 		case 'w':

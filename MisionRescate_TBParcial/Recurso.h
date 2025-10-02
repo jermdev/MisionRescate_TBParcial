@@ -49,6 +49,13 @@ public:
 	void setActivo(bool activo) {
 		this->activo = activo;
 	}
+
+	void setDiseñoRecurzo(string cabeza, string cuerpo, string pies) {
+		this->cabeza = cabeza;
+		this->cuerpo = cuerpo;
+		this->pies = pies;
+	}
+
 	Rectangle getRectangle() {
 		return Rectangle(x, y, 3, 3);
 	}

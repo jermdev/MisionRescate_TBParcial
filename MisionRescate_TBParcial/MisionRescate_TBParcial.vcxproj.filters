@@ -29,6 +29,9 @@
     <ClInclude Include="Mundo02.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Mundo1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="JefeMinero.h">
     <ClInclude Include="Recurso.h">
       <Filter>Header Files</Filter>

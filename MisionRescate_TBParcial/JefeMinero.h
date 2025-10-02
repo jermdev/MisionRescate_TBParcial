@@ -1,5 +1,6 @@
 #pragma once
 
+using namespace System::Drawing;
 class JefeMinero {
 
 private:
@@ -21,9 +22,13 @@ public:
 
 	void borrar();
 
-	void mover(char t, int* mapa[30][120]);
+	void mover(char t, int (*mapa)[120]);
 
 	int getX();
 	int  getY();
+
+	void setX(int x);
+	void setY(int y);
+	Rectangle getRectangle();
 };
 
